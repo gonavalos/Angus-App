@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import CardWidget from '../CardWidget/CardWidget'
 import './NavBar.css'
+import { Link, NavLink } from 'react-router-dom'
 //navbar-dark bg-dark
 //<nav className="">
 
@@ -29,7 +30,7 @@ function Navbar(){
                 <span className="navbar-toggler-icon"> </span>
             </button>
             <div className='logo'>
-                <span src='./logo192.png'> <img src={navbar ? './img/img-logo/logo.png' : './img/img-logo/logo2.png'}></img> </span>
+                <span src='./logo192.png'> <img src={navbar ? '/img/img-logo/logo.png' : '/img/img-logo/logo2.png'}></img> </span>
             </div>
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav mx-auto">
@@ -47,11 +48,12 @@ function Navbar(){
                         <a className="nav-link" href="#">Pricing</a>
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
+                    <Link to='/' className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a className="dropdown-item"  href="#">Signature</a></li>
-                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                    <li><a className="dropdown-item" href="#">holahola</a></li>
+                    <li><NavLink to='/' className="dropdown-item">All</NavLink></li>
+                    <li><NavLink to='/category/Signature' className="dropdown-item">Signature</NavLink></li>
+                    <li><NavLink to='/category/Random' className="dropdown-item" >Random</NavLink></li>
+                    
                    
                 </ul>
 

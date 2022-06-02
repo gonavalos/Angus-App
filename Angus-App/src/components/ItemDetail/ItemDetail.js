@@ -1,27 +1,16 @@
 import Item from '../Item/Item'
-
-const ItemDetail = (products) => {
-
-    const { id ,name, img, price, stock, description } = product
-    
+import ItemCount from '../ItemCount/ItemCount'
+import '../Item/Item.css'
 
 
-    return (
-        
-            
-        <div className="product">
-            <img className="product__image" src={img}></img>
-            <h1 className="product__title">{name}</h1>
-            <hr />
-            <p> Precio $ {price} </p>
-            <p>{description}</p>
-            <ItemCount stock={stock}/>
+const ItemDetail = ({ name }) => {
+    return(
+        <div>
+            <h1>ItemDetail</h1>
+            <h2>{name}</h2>
         </div>
-
-
-
-
+        
     )
-
 }
+
 export default ItemDetail
